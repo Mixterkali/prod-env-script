@@ -2,8 +2,11 @@
 - name: Move files in Ansible Semaphore
   hosts: localhost
   tasks:
-    - name: Change directory (Not needed in Ansible)
-      shell: cd /mnt/pve/NVME2
+    - name: Ensure the source directory exists
+      stat:
+        path: /mnt/pve/NVME2
+      register: dump_dir
 
-    - name: Move dump files
+    - name: Move dump files if the directory exists
       shell: mv /mnt/pve/NVME2/dump/* /mnt/pve/SYN0LOGY-NFS/dump/
+      when: dump_dir.stat.exists
