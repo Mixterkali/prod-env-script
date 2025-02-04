@@ -1,0 +1,9 @@
+---
+- name: Move files in Ansible Semaphore
+  hosts: localhost
+  tasks:
+    - name: Change directory (Not needed in Ansible)
+      shell: cd /mnt/pve/NVME2
+
+    - name: Move dump files
+      shell: mv /mnt/pve/NVME2/dump/* /mnt/pve/SYN0LOGY-NFS/dump/
