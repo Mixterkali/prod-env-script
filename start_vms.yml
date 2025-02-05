@@ -1,0 +1,33 @@
+- name: Start Multiple VMs in Proxmox with Delay
+  hosts: pve-node1
+  gather_facts: no
+  tasks:
+    - name: Start VM 101
+      ansible.builtin.command: qm start 101
+      register: result1
+      changed_when: "'started' in result1.stdout"
+
+    - name: Wait for 10 seconds before starting the next VM
+      ansible.builtin.pause:
+        seconds: 10
+
+    - name: Start VM 102
+      ansible.builtin.command: qm start 102
+      register: result2
+      changed_when: "'started' in result2.stdout"
+
+    - name: Wait for 10 seconds before starting the next VM
+      ansible.builtin.pause:
+        seconds: 10
+
+    - name: Start VM 103
+      ansible.builtin.command: qm start 103
+      register: result3
+      changed_when: "'started' in result3.stdout"
+
+    - name: Display Results
+      ansible.builtin.debug:
+        msg:
+          - "VM 101: {{ result1.stdout }}"
+          - "VM 102: {{ result2.stdout }}"
+          - "VM 103: {{ result3.stdout }}"
