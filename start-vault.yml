@@ -1,0 +1,6 @@
+- name: Start Vaultwarden Container
+  hosts: docker-gen
+  become: yes
+  tasks:
+    - name: Start Vaultwarden with Docker
+      command: docker start vaultwarden
