@@ -1,0 +1,239 @@
+- name: Start Multiple VMs in Proxmox with Delay
+  hosts: pve-node1
+  gather_facts: no
+  tasks:
+    - name: Start VM 100
+      ansible.builtin.command: qm start 101
+      register: result100
+      changed_when: "'started' in result100.stdout"
+
+    - name: Wait for 10 seconds before starting the next VM
+      ansible.builtin.pause:
+        seconds: 10
+
+    - name: Start VM 102
+      ansible.builtin.command: qm start 102
+      register: result102
+      changed_when: "'started' in result102.stdout"
+
+    - name: Wait for 10 seconds before starting the next VM
+      ansible.builtin.pause:
+        seconds: 10
+
+    - name: Start VM 103
+      ansible.builtin.command: qm start 103
+      register: result103
+      changed_when: "'started' in result103.stdout"
+
+    - name: Start VM 104
+      ansible.builtin.command: qm start 104
+      register: result104
+      changed_when: "'started' in result104.stdout"
+
+    - name: Start VM 105
+      ansible.builtin.command: qm start 105
+      register: result105
+      changed_when: "'started' in result105.stdout"
+
+    - name: Start VM 106
+      ansible.builtin.command: qm start 106
+      register: result106
+      changed_when: "'started' in result106.stdout"
+
+    - name: Start VM 107
+      ansible.builtin.command: qm start 107
+      register: result107
+      changed_when: "'started' in result107.stdout"
+
+    - name: Start VM 109
+      ansible.builtin.command: qm start 109
+      register: result109
+      changed_when: "'started' in result109.stdout"
+
+    - name: Start VM 110
+      ansible.builtin.command: qm start 110
+      register: result110
+      changed_when: "'started' in result110.stdout"
+
+    - name: Start VM 111
+      ansible.builtin.command: qm start 111
+      register: result111
+      changed_when: "'started' in result111.stdout"
+
+    - name: Start VM 112
+      ansible.builtin.command: qm start 112
+      register: result112
+      changed_when: "'started' in result112.stdout"
+
+    - name: Start VM 114
+      ansible.builtin.command: qm start 114
+      register: result114
+      changed_when: "'started' in result114.stdout"
+
+    - name: Start VM 115
+      ansible.builtin.command: qm start 115
+      register: result115
+      changed_when: "'started' in result115.stdout"
+
+    - name: Start VM 116
+      ansible.builtin.command: qm start 116
+      register: result116
+      changed_when: "'started' in result116.stdout"
+
+    - name: Start VM 117
+      ansible.builtin.command: qm start 117
+      register: result117
+      changed_when: "'started' in result117.stdout"
+
+    - name: Start VM 119
+      ansible.builtin.command: qm start 119
+      register: result119
+      changed_when: "'started' in result119.stdout"
+
+    - name: Start VM 120
+      ansible.builtin.command: qm start 120
+      register: result120
+      changed_when: "'started' in result120.stdout"
+
+    - name: Start VM 121
+      ansible.builtin.command: qm start 121
+      register: result121
+      changed_when: "'started' in result121.stdout"
+
+    - name: Start VM 122
+      ansible.builtin.command: qm start 122
+      register: result122
+      changed_when: "'started' in result122.stdout"
+
+    - name: Start VM 124
+      ansible.builtin.command: qm start 124
+      register: result124
+      changed_when: "'started' in result124.stdout"
+
+    - name: Start VM 125
+      ansible.builtin.command: qm start 125
+      register: result125
+      changed_when: "'started' in result125.stdout"
+
+    - name: Start VM 126
+      ansible.builtin.command: qm start 126
+      register: result126
+      changed_when: "'started' in result126.stdout
+
+    - name: Start VM 127
+      ansible.builtin.command: qm start 127
+      register: result127
+      changed_when: "'started' in result127.stdout
+
+    - name: Start VM 129
+      ansible.builtin.command: qm start 129
+      register: result129
+      changed_when: "'started' in result129.stdout
+
+    - name: Start VM 130
+      ansible.builtin.command: qm start 130
+      register: result130
+      changed_when: "'started' in result130.stdout
+
+    - name: Start VM 131
+      ansible.builtin.command: qm start 131
+      register: result131
+      changed_when: "'started' in result131.stdout
+
+    - name: Start VM 132
+      ansible.builtin.command: qm start 132
+      register: result132
+      changed_when: "'started' in result132.stdout
+
+    - name: Start VM 134
+      ansible.builtin.command: qm start 134
+      register: result134
+      changed_when: "'started' in result134.stdout
+
+    - name: Start VM 135
+      ansible.builtin.command: qm start 135
+      register: result135
+      changed_when: "'started' in result135.stdout
+
+    - name: Start VM 136
+      ansible.builtin.command: qm start 136
+      register: result136
+      changed_when: "'started' in result136.stdout
+
+    - name: Start VM 137
+      ansible.builtin.command: qm start 137
+      register: result137
+      changed_when: "'started' in result137.stdout
+
+
+    - name: Start VM 139
+      ansible.builtin.command: qm start 139
+      register: result139
+      changed_when: "'started' in result139.stdout
+
+    - name: Start VM 140
+      ansible.builtin.command: qm start 140
+      register: result140
+      changed_when: "'started' in result140.stdout
+
+    - name: Start VM 141
+      ansible.builtin.command: qm start 141
+      register: result141
+      changed_when: "'started' in result141.stdout
+
+
+    - name: Start VM 142
+      ansible.builtin.command: qm start 142
+      register: result142
+      changed_when: "'started' in result142.stdout
+
+
+    - name: Start VM 143
+      ansible.builtin.command: qm start 143
+      register: result143
+      changed_when: "'started' in result143.stdout
+
+    - name: Start VM 144
+      ansible.builtin.command: qm start 144
+      register: result144
+      changed_when: "'started' in result144.stdout
+
+    - name: Display Results
+      ansible.builtin.debug:
+        msg:
+          - "VM 100: {{ result100.stdout }}"
+          - "VM 102: {{ result102.stdout }}"
+          - "VM 103: {{ result103.stdout }}"
+          - "VM 104: {{ result104.stdout }}"
+          - "VM 105: {{ result105.stdout }}"
+          - "VM 106: {{ result106.stdout }}"
+          - "VM 107: {{ result107.stdout }}"
+          - "VM 109: {{ result109.stdout }}"
+          - "VM 110: {{ result110.stdout }}"
+          - "VM 111: {{ result111.stdout }}"
+          - "VM 112: {{ result112.stdout }}"
+          - "VM 114: {{ result114.stdout }}"
+          - "VM 115: {{ result115.stdout }}"
+          - "VM 116: {{ result116.stdout }}"
+          - "VM 117: {{ result117.stdout }}"
+          - "VM 119: {{ result119.stdout }}"
+          - "VM 120: {{ result120.stdout }}"
+          - "VM 121: {{ result121.stdout }}"
+          - "VM 122: {{ result122.stdout }}"
+          - "VM 124: {{ result124.stdout }}"
+          - "VM 125: {{ result125.stdout }}"
+          - "VM 126: {{ result126.stdout }}"
+          - "VM 127: {{ result127.stdout }}"
+          - "VM 129: {{ result129.stdout }}"
+          - "VM 130: {{ result130.stdout }}"
+          - "VM 131: {{ result131.stdout }}"
+          - "VM 132: {{ result132.stdout }}"
+          - "VM 134: {{ result134.stdout }}"
+          - "VM 135: {{ result135.stdout }}"
+          - "VM 136: {{ result136.stdout }}"
+          - "VM 137: {{ result137.stdout }}"
+          - "VM 139: {{ result139.stdout }}"
+          - "VM 140: {{ result140.stdout }}"
+          - "VM 141: {{ result141.stdout }}"
+          - "VM 142: {{ result142.stdout }}"
+          - "VM 144: {{ result144.stdout }}"
