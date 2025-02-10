@@ -118,85 +118,85 @@
     - name: Start VM 126
       ansible.builtin.command: qm start 126
       register: result126
-      changed_when: "'started' in result126.stdout
+      changed_when: "'started' in result126.stdout"
 
     - name: Start VM 127
       ansible.builtin.command: qm start 127
       register: result127
-      changed_when: "'started' in result127.stdout
+      changed_when: "'started' in result127.stdout"
 
     - name: Start VM 129
       ansible.builtin.command: qm start 129
       register: result129
-      changed_when: "'started' in result129.stdout
+      changed_when: "'started' in result129.stdout"
 
     - name: Start VM 130
       ansible.builtin.command: qm start 130
       register: result130
-      changed_when: "'started' in result130.stdout
+      changed_when: "'started' in result130.stdout"
 
     - name: Start VM 131
       ansible.builtin.command: qm start 131
       register: result131
-      changed_when: "'started' in result131.stdout
+      changed_when: "'started' in result131.stdout"
 
     - name: Start VM 132
       ansible.builtin.command: qm start 132
       register: result132
-      changed_when: "'started' in result132.stdout
+      changed_when: "'started' in result132.stdout"
 
     - name: Start VM 134
       ansible.builtin.command: qm start 134
       register: result134
-      changed_when: "'started' in result134.stdout
+      changed_when: "'started' in result134.stdout"
 
     - name: Start VM 135
       ansible.builtin.command: qm start 135
       register: result135
-      changed_when: "'started' in result135.stdout
+      changed_when: "'started' in result135.stdout"
 
     - name: Start VM 136
       ansible.builtin.command: qm start 136
       register: result136
-      changed_when: "'started' in result136.stdout
+      changed_when: "'started' in result136.stdout"
 
     - name: Start VM 137
       ansible.builtin.command: qm start 137
       register: result137
-      changed_when: "'started' in result137.stdout
+      changed_when: "'started' in result137.stdout"
 
 
     - name: Start VM 139
       ansible.builtin.command: qm start 139
       register: result139
-      changed_when: "'started' in result139.stdout
+      changed_when: "'started' in result139.stdout"
 
     - name: Start VM 140
       ansible.builtin.command: qm start 140
       register: result140
-      changed_when: "'started' in result140.stdout
+      changed_when: "'started' in result140.stdout"
 
     - name: Start VM 141
       ansible.builtin.command: qm start 141
       register: result141
-      changed_when: "'started' in result141.stdout
+      changed_when: "'started' in result141.stdout"
 
 
     - name: Start VM 142
       ansible.builtin.command: qm start 142
       register: result142
-      changed_when: "'started' in result142.stdout
+      changed_when: "'started' in result142.stdout"
 
 
     - name: Start VM 143
       ansible.builtin.command: qm start 143
       register: result143
-      changed_when: "'started' in result143.stdout
+      changed_when: "'started' in result143.stdout"
 
     - name: Start VM 144
       ansible.builtin.command: qm start 144
       register: result144
-      changed_when: "'started' in result144.stdout
+      changed_when: "'started' in result144.stdout"
 
     - name: Display Results
       ansible.builtin.debug:
