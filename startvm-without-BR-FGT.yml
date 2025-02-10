@@ -1,4 +1,7 @@
-
+- name: Start Multiple VMs in Proxmox with Delay
+  hosts: pve-node1
+  gather_facts: no
+  tasks:
 - name: Start VM 100
   ansible.builtin.command: qm start 100
   register: result100
