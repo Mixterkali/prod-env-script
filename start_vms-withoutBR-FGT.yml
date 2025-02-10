@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Start VM 100
-      ansible.builtin.command: qm start 101
+      ansible.builtin.command: qm start 100
       register: result100
       changed_when: "'started' in result100.stdout"
 
