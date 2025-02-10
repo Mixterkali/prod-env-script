@@ -2,7 +2,7 @@
   hosts: pve-node1
   gather_facts: no
   tasks:
-- name: Start VM 100
+  - name: Start VM 100
   ansible.builtin.command: qm start 100
   register: result100
   changed_when: "'started' in result100.stdout"
@@ -88,6 +88,15 @@
 - name: Display Results
   ansible.builtin.debug:
     msg:
-      {% for vm_id in [100, 102, 103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 115, 116, 117, 119, 120, 121, 122, 124, 125, 126, 127, 129, 130, 131, 132, 134, 135, 136, 137, 139, 140, 141, 142, 144] %}
+      - "VM 100: {{ result100.stdout }}"
+      - "VM 102: {{ result102.stdout }}"
+      - "VM 103: {{ result103.stdout }}"
+      - "VM 104: {{ result104.stdout }}"
+      - "VM 105: {{ result105.stdout }}"
+      - "VM 106: {{ result106.stdout }}"
+      - "VM 107: {{ result107.stdout }}"
+      - "VM 109: {{ result109.stdout }}"
+      {% for vm_id in [110, 111, 112, 114, 115, 116, 117, 119, 120, 121, 122, 124, 125, 126, 127, 129, 130, 131, 132, 134, 135, 136, 137, 139, 140, 141, 142, 144] %}
       - "VM {{ vm_id }}: {{ lookup('vars', 'result' + vm_id|string + '.stdout') }}"
       {% endfor %}
+
