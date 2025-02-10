@@ -188,11 +188,6 @@
       changed_when: "'started' in result142.stdout"
 
 
-    - name: Start VM 143
-      ansible.builtin.command: qm start 143
-      register: result143
-      changed_when: "'started' in result143.stdout"
-
     - name: Start VM 144
       ansible.builtin.command: qm start 144
       register: result144
