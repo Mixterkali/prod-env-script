@@ -1,0 +1,90 @@
+
+- name: Start VM 100
+  ansible.builtin.command: qm start 100
+  register: result100
+  changed_when: "'started' in result100.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 102
+  ansible.builtin.command: qm start 102
+  register: result102
+  changed_when: "'started' in result102.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 103
+  ansible.builtin.command: qm start 103
+  register: result103
+  changed_when: "'started' in result103.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 104
+  ansible.builtin.command: qm start 104
+  register: result104
+  changed_when: "'started' in result104.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 105
+  ansible.builtin.command: qm start 105
+  register: result105
+  changed_when: "'started' in result105.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 106
+  ansible.builtin.command: qm start 106
+  register: result106
+  changed_when: "'started' in result106.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 107
+  ansible.builtin.command: qm start 107
+  register: result107
+  changed_when: "'started' in result107.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+- name: Start VM 109
+  ansible.builtin.command: qm start 109
+  register: result109
+  changed_when: "'started' in result109.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+
+{% for vm_id in [110, 111, 112, 114, 115, 116, 117, 119, 120, 121, 122, 124, 125, 126, 127, 129, 130, 131, 132, 134, 135, 136, 137, 139, 140, 141, 142, 144] %}
+- name: Start VM {{ vm_id }}
+  ansible.builtin.command: qm start {{ vm_id }}
+  register: result{{ vm_id }}
+  changed_when: "'started' in result{{ vm_id }}.stdout"
+
+- name: Wait for 10 seconds before starting the next VM
+  ansible.builtin.pause:
+    seconds: 10
+{% endfor %}
+
+- name: Display Results
+  ansible.builtin.debug:
+    msg:
+      {% for vm_id in [100, 102, 103, 104, 105, 106, 107, 109, 110, 111, 112, 114, 115, 116, 117, 119, 120, 121, 122, 124, 125, 126, 127, 129, 130, 131, 132, 134, 135, 136, 137, 139, 140, 141, 142, 144] %}
+      - "VM {{ vm_id }}: {{ lookup('vars', 'result' + vm_id|string + '.stdout') }}"
+      {% endfor %}
