@@ -1,6 +1,6 @@
 ---
 - name: Backup Proxmox VM before upgrade
-  hosts: proxmox
+  hosts: pve-node
   become: yes
   tasks:
     - name: Display start message
