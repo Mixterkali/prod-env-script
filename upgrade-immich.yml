@@ -1,0 +1,12 @@
+---
+- name: Upgrade Immich in Docker Compose
+  hosts: immich_server
+  become: true
+  tasks:
+
+
+    - name: Change to Immich directory
+      ansible.builtin.shell:
+        cmd: "cd /path/to/immich-app && docker compose pull && docker compose up -d"
+      args:
+        executable: /bin/bash
